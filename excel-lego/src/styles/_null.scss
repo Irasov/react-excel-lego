@@ -1,0 +1,55 @@
+/* Обнуление стилей */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+img {
+    vertical-align: top;
+}
+html, body, #root{
+    height: 100%;
+}
+html {
+    font-style: 16px;  
+    scroll-behavior: smooth;
+}
+
+body {
+    //font-family: $font-family;
+    line-height: 1;
+    //color: $color-main;
+    //background-color: $bg-main;
+    &._lock{
+        overflow: hidden;
+    }
+}
+
+.wrapper{
+    overflow: hidden;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
