@@ -1,4 +1,6 @@
 /* Обнуление стилей */
+@use './variables' as *; 
+
 *,
 *::before,
 *::after {
@@ -37,10 +39,10 @@ html {
 }
 
 body {
-    //font-family: $font-family;
+    font-family: $font-family;
     line-height: 1;
-    //color: $color-main;
-    //background-color: $bg-main;
+    color: $color-main;
+    background-color: $bg-main;
     &._lock{
         overflow: hidden;
     }

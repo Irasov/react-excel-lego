@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="container">
         <div className={styles.body}>
-          FOOTER
+          <h2 className={styles.title}>Footer</h2>
         </div>
       </div>
     </footer>
