@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
   return (
-    <div className={styles.header}>
+    <header className="header">
       <div className="container">
         <div className={styles.body}>
           <div className="logo">
@@ -11,7 +11,7 @@ const Header: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 
