@@ -10,3 +10,9 @@
       padding: 0 10px;
     }
 }
+
+.header {
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
