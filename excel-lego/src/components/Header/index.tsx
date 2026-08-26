@@ -25,10 +25,11 @@ const Header: React.FC = () => {
           </div>
           <nav className={styles.nav}>
             <div className={styles.menu}>
-              <Link to="#" className={styles.menu__item}>Серии</Link>
-              <Link to="#" className={styles.menu__item}>Инструкции</Link>
-              <Link to="#" className={styles.menu__item}>Медиа</Link>
-              <Link to="#" className={styles.menu__item}>Контакты</Link>
+              <Link to="/" className={`${styles.menu__item} ${ location.pathname == '/' ? styles.menu__item_active : ''}`}>Home</Link>
+              <Link to="#" className={`${styles.menu__item} ${ location.pathname == '/series' ? styles.menu__item_active : ''}`}>Series</Link>
+              <Link to="#" className={`${styles.menu__item} ${ location.pathname == '/instructions' ? styles.menu__item_active : ''}`}>Instructions</Link>
+              <Link to="#" className={`${styles.menu__item} ${ location.pathname == '/media' ? styles.menu__item_active : ''}`}>Media</Link>
+              <Link to="#" className={`${styles.menu__item} ${ location.pathname == '/contacts' ? styles.menu__item_active : ''}`}>Contacts</Link>
             </div>
           </nav>
         </div>
