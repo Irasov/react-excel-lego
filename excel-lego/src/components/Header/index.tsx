@@ -53,10 +53,10 @@ const Header: React.FC = () => {
           <nav className={`${styles.nav} ${active ? styles.active : ''}`}>
             <div className={styles.menu}>
               <Link to="/" className={`${styles.menu__item} ${ location.pathname == '/' ? styles.menu__item_active : ''}`} onClick={active ? iconClick : undefined}>Home</Link>
-              <Link to="#" className={`${styles.menu__item} ${ location.pathname == '/series' ? styles.menu__item_active : ''}`} onClick={active ? iconClick : undefined}>Series</Link>
-              <Link to="#" className={`${styles.menu__item} ${ location.pathname == '/instructions' ? styles.menu__item_active : ''}`} onClick={active ? iconClick : undefined}>Instructions</Link>
-              <Link to="#" className={`${styles.menu__item} ${ location.pathname == '/media' ? styles.menu__item_active : ''}`} onClick={active ? iconClick : undefined}>Media</Link>
-              <Link to="#" className={`${styles.menu__item} ${ location.pathname == '/contacts' ? styles.menu__item_active : ''}`} onClick={active ? iconClick : undefined}>Contacts</Link>
+              <Link to="/series" className={`${styles.menu__item} ${ location.pathname == '/series' ? styles.menu__item_active : ''}`} onClick={active ? iconClick : undefined}>Series</Link>
+              <Link to="/instructions" className={`${styles.menu__item} ${ location.pathname == '/instructions' ? styles.menu__item_active : ''}`} onClick={active ? iconClick : undefined}>Instructions</Link>
+              <Link to="/media" className={`${styles.menu__item} ${ location.pathname == '/media' ? styles.menu__item_active : ''}`} onClick={active ? iconClick : undefined}>Media</Link>
+              <Link to="/contacts" className={`${styles.menu__item} ${ location.pathname == '/contacts' ? styles.menu__item_active : ''}`} onClick={active ? iconClick : undefined}>Contacts</Link>
             </div>
           </nav>
           <div className={`${styles.icon} ${active ? styles.active : ''}`} onClick={iconClick}></div>
