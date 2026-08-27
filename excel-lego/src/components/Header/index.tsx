@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./Header.module.scss";
 import ImageSequenceLoop from "../../utils/ImageSequenceLoop";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header: React.FC = () => {
+  const location = useLocation();
   return (
     <header className="header">
       <div className="container">
