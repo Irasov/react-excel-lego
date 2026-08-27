@@ -7,6 +7,8 @@
   border-bottom: 1px $color-title solid;
 }
 .logo {
+  position: relative;
+  z-index: 20;
   display: flex;
   column-gap: 5px;
   align-items: center;
@@ -31,9 +33,35 @@
   height: 100%;
 }
 
+.nav {
+  transition: all .3s ease 0s;
+  @media(max-width: 999.98px) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 20px;
+    right: -100%;
+    top: 0;
+    background: $bg-main;
+    &.active {
+      right: 0;
+      transition: all .3s ease 0s;
+    }
+  }
+}
+
 .menu {
   display: flex;
   column-gap: 20px;
+  @media(max-width: 999.98px) {
+    flex-direction: column;
+    padding: 180px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    row-gap: 30px;
+  }
   &__item {
     text-decoration: none;
     color: $color-main;
@@ -49,5 +77,50 @@
       text-decoration: none; 
       cursor: default; 
     }
+  }
+}
+
+.icon {
+  display: none;
+  @media(max-width: 999.98px) {
+    display: block;
+    align-self: center;
+    width: 42.5px;
+    height: 18.3px;
+    position: relative;
+    z-index: 30;
+    cursor: pointer;
+  }
+  & span, &::before, &::after {
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: $color-title;
+    transition: all 0.3s ease 0s;
+  }
+  &::before, &::after {
+    content: "";
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+  & span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+  &.active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+  &.active::before {
+    top: 50%;
+    transform: rotate(45deg) translate(0, -50%);
+  }
+  &.active::after {
+    bottom: 50%;
+    transform: rotate(-45deg) translate(0, 50%);
   }
 }

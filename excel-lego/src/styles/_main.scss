@@ -15,4 +15,8 @@
     position: sticky;
     top: 0px;
     z-index: 100;
+    overflow: hidden;
+    @media(max-width: 999.98px) {
+        height: 100vh;
+    }
 }
