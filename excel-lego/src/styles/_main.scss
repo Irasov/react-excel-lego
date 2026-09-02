@@ -16,7 +16,11 @@
     top: 0px;
     z-index: 100;
     overflow: hidden;
-    @media(max-width: 999.98px) {
+    &.active {
         height: 100vh;
     }
+}
+
+.series {
+    overflow: hidden;
 }

@@ -32,7 +32,7 @@ const Header: React.FC = () => {
   
 
   return (
-    <header className="header">
+    <header className={`header ${active ? 'active' : ''}`}>
       <div className="container">
         <div className={styles.body}>
           <div className={styles.logo}>
