@@ -29,9 +29,9 @@ const SeriesBlock: React.FC = () => {
   }
 
   React.useEffect(()=>{
-   console.log("DDDDD",main(URL).then((data) => {
+    main(URL).then((data) => {
       setSeries(data as any[]);
-    }));
+    });
   },[]);
 
   const slides = series.map((item) => (
@@ -80,7 +80,15 @@ const SeriesBlock: React.FC = () => {
                 
               </Swiper>
               <div className={styles.control}>
-                <div className="swiper__next">NEXT
+               <div className="swiper__prev">
+                  <svg className={styles.arrow} xmlns="http://www.w3.org/2000/svg" width="46" height="32" viewBox="6 14 46 32">
+                    <polygon points="30,30 46,18 46,25 58,25 58,35 46,35 46,42" fill="#e07a5f"/>
+                  </svg>
+                </div>
+                <div className="swiper__next">
+                  <svg className={styles.arrow} xmlns="http://www.w3.org/2000/svg" width="46" height="32" viewBox="6 14 46 32">
+                    <polygon points="30,30 14,18 14,25 2,25 2,35 14,35 14,42" fill="#e07a5f"/>
+                  </svg>
                 </div>
               </div>
             </div>

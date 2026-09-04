@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  
 }
 
 .image{
@@ -12,4 +11,34 @@
 
 .img {
   max-width: 100%;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: $fourth-color;
+}
+
+.content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  text-align: center;
+  align-items: center;
+  font-family: $second-family;
+}
+
+.link {
+  text-decoration: none;
+  color: $third-color;
+  font-size: 1.4rem;
+  transition: all 0.3s ease 0s;
+  &:hover {
+    color: $color-title;
+  }
+}
+
+.description {
+  line-height: 1.5;
 }
