@@ -49,6 +49,9 @@ const SeriesBlock: React.FC = () => {
     <div className="series">
       <div className="container">
         <div className={styles.body}>
+            <h2 className={styles.title}>
+              Modular Series
+            </h2>
             <div className={styles.swiper__container}>
               <Swiper
                 className="coffee-slider"

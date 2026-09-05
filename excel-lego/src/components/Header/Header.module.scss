@@ -24,6 +24,7 @@
 }
 .title {
   @include title;
+  text-transform: uppercase;
 }
 
 .image-sequence {
