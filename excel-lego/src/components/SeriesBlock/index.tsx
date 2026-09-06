@@ -1,17 +1,18 @@
 import React from "react";
-import Papa from "papaparse";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import styles from "./SeriesBlock.module.scss";
 import CardSeries from "../CardSeries";
 import CardSeriesSkeleton from "../CardSeries/CardSeriesSkeleton";
+import { fetchSeries } from "../../utils/fetchSeries";
 
-interface SeriesItem {
+export interface SeriesItem {
   id: string;
   name: string;
   image: string;
   description: string;
+  items: string;
 }
 
 const SeriesBlock: React.FC = () => {
@@ -20,23 +21,11 @@ const SeriesBlock: React.FC = () => {
   const [loading, setLoading] = React.useState(true);
   const URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwk_rUljFlmES_9rZ6LxWQK4Ce2mFrvNtLRxCNXU4jfKyvhQljrCC5ZSCtQe_-mWQBaCC2KJK-8kSE/pub?gid=824227161&single=true&output=tsv"; 
 
-  async function fetchData(url: string): Promise<SeriesItem[]> {
-    return new Promise((resolve, reject) => {
-      Papa.parse<SeriesItem>(url, {
-        download: true,
-        header: true,
-        skipEmptyLines: true,
-        complete: (res) => resolve(res.data),
-        error: reject,
-      });
-    });
-  }
-
   React.useEffect(() => {
     let cancelled = false;
     async function loadData() {
       try {
-        const products = await fetchData(URL);
+        const products = await fetchSeries(URL);
         if (!cancelled) {
           setSeries(products as SeriesItem[]);
         }
