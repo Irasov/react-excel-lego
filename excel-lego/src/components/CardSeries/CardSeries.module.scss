@@ -1,13 +1,19 @@
 .card {
   max-width: 300px;
+  min-height: 483px;
   border: 1px solid $fourth-color;
   border-radius: 20px;
+  display: flex;
 }
 
 .body {
   display: flex;
+  padding: 20px 10px;
   flex-direction: column;
   row-gap: 20px; 
+  align-items: center;
+  width: 100%;
+ 
 }
 
 .image{
@@ -25,6 +31,7 @@
 }
 
 .content {
+  flex-grow: 1;
   padding: 10px 10px 20px 10px;
   display: flex;
   flex-direction: column;

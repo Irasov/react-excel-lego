@@ -16,13 +16,13 @@ const CardSeries: React.FC<CardSeriesProps> = ({ id, name, image, description })
         <div className={styles.image}>
           <img src={image} alt={name} className={styles.img} />
         </div>
-      <div className={styles.content}>
-        <h3 className={styles.title}>{name}</h3>
-        <p className={styles.description}>{description}</p>
+        <div className={styles.content}>
+          <h3 className={styles.title}>{name}</h3>
+          <p className={styles.description}>{description}</p>
+        </div>
         <Link to={`/seria/${id}`} className={styles.link}>
           Learn More
         </Link>
-      </div>
       </div>
     </div>
   );
