@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Header.module.scss";
-import ImageSequenceLoop from "../../utils/ImageSequenceLoop";
+import ImageSequenceLoop from "../ImageSequenceLoop";
 import { Link, useLocation } from "react-router-dom";
 const MOBILE_WIDTH = 999.98;
 
