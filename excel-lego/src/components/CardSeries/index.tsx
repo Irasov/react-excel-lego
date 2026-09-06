@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./CardSeries.module.scss";
+import { Link } from "react-router-dom";
 
 type CardSeriesProps = {
   id:string;
@@ -18,9 +19,9 @@ const CardSeries: React.FC<CardSeriesProps> = ({ id, name, image, description })
       <div className={styles.content}>
         <h3 className={styles.title}>{name}</h3>
         <p className={styles.description}>{description}</p>
-        <a href="#" className={styles.link}>
+        <Link to={`/seria/${id}`} className={styles.link}>
           Learn More
-        </a>
+        </Link>
       </div>
       </div>
     </div>
