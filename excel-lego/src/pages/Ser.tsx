@@ -1,9 +1,9 @@
 import React from "react";
-import SeriaFull from "../components/SerieFull";
-import LoadingBlock from "../components/SerieFull/LoadingBlock";
+import LoadingBlock from "../components/SerFull/LoadingBlock";
 import {useParams, useNavigate} from "react-router-dom";
 import { fetchSeries } from "../utils/fetchSeries";
 import type {SeriesItem} from "../components/SeriesBlock";
+import SerFull from "../components/SerFull";
 
 const URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwk_rUljFlmES_9rZ6LxWQK4Ce2mFrvNtLRxCNXU4jfKyvhQljrCC5ZSCtQe_-mWQBaCC2KJK-8kSE/pub?gid=824227161&single=true&output=tsv"; 
 
@@ -40,7 +40,6 @@ const Ser: React.FC = () => {
   },[]);
 
   const ser = series[Number(id)];
-  console.log(series);
   if (loading && !ser) {
     return <LoadingBlock />;
   }
@@ -48,7 +47,7 @@ const Ser: React.FC = () => {
   return (
     <div className="ser">
       <div className="container">
-        <SeriaFull 
+        <SerFull 
           name={ser.name}
           image={ser.image}
           description={ser.description}

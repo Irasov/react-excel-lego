@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./SeriaFull.module.scss";
+import styles from "./SerFull.module.scss";
 
 type SeriaFullProps = {
   name: string;
@@ -8,7 +8,7 @@ type SeriaFullProps = {
   items: string;
 };
 
-const SeriesFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) => {
+const SerFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) => {
   return (
     <div className={styles.body}>
       <div className={styles.image}>
@@ -30,4 +30,4 @@ const SeriesFull: React.FC<SeriaFullProps> = ({ name, image, description, items 
   )
 }
 
-export default SeriesFull;
+export default SerFull;
