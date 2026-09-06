@@ -7,6 +7,7 @@ const MOBILE_WIDTH = 999.98;
 const Header: React.FC = () => {
   const location = useLocation();
   const [active, setActive] = React.useState(false);
+  const [scroll, setScroll] = React.useState(false);
 
   const iconClick = () => {
     setActive((prev) => !prev);
@@ -29,10 +30,22 @@ const Header: React.FC = () => {
     }
   }, []);
 
-  
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+ }, []);  
 
   return (
-    <header className={`header ${active ? 'active' : ''}`}>
+    <header className={`header ${active ? 'active' : ''} ${scroll ? 'scroll' : ''}`}>
       <div className="container">
         <div className={styles.body}>
           <div className={styles.logo}>

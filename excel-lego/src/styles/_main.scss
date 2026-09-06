@@ -1,3 +1,4 @@
+@use './variables' as *; 
 .mainpage{
     flex-grow: 1;
 }
@@ -16,8 +17,13 @@
     top: 0px;
     z-index: 100;
     overflow: hidden;
+    transition: background .3s ease 0s;
     &.active {
         height: 100vh;
+    }
+    &.scroll {
+        background:  rgba(26, 34, 47, 0.8);
+        backdrop-filter: blur(10px);
     }
 }
 
