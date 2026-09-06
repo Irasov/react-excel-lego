@@ -20,7 +20,7 @@ const CardSeries: React.FC<CardSeriesProps> = ({ id, name, image, description })
           <h3 className={styles.title}>{name}</h3>
           <p className={styles.description}>{description}</p>
         </div>
-        <Link to={`/seria/${id}`} className={styles.link}>
+        <Link to={`/ser/${id}`} className={styles.link}>
           Learn More
         </Link>
       </div>

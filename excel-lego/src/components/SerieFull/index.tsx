@@ -8,11 +8,11 @@ type SeriaFullProps = {
   items: string;
 };
 
-const SeriaFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) => {
+const SeriesFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) => {
   return (
     <div className={styles.body}>
       <div className={styles.image}>
-        <img src={image} alt={name} className={styles.image} />
+        <img src={image} alt={name} className={styles.img} />
       </div>
       <h1 className={styles.title}>
         {name}
@@ -20,9 +20,14 @@ const SeriaFull: React.FC<SeriaFullProps> = ({ name, image, description, items }
       <p className={styles.description}>
         {description}
       </p>
-    </div>
-
+      <div className={styles.items}>
+        <h2 className={styles.title}>
+          Items
+        </h2>
+        
+      </div>
+    </div>   
   )
 }
 
-export default SeriaFull;
+export default SeriesFull;

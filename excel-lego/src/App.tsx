@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import MainLayout from './layouts/MainLayout';
 import NotFound from './pages/NotFound';
 import Series from './pages/Series';
-import Seria from './pages/Seria';
+import Ser from './pages/Ser';
 import Instructions from './pages/Instructions';
 import Media from './pages/Media';
 import Contacts from './pages/Contacts';
@@ -17,7 +17,7 @@ function App() {
         <Route path='/instructions' element={<Instructions />}/>
         <Route path='/media' element={<Media />}/>
         <Route path='/contacts' element={<Contacts />}/>
-        <Route path='/seria/:id' element={<Seria />}/>
+        <Route path='/ser/:id' element={<Ser />}/>
         <Route path='*' element={<NotFound />}/>
       </Route>
     </Routes>
