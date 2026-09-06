@@ -1,6 +1,6 @@
 import React from "react";
 import LoadingBlock from "../components/SerFull/LoadingBlock";
-import {useParams, useNavigate} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import { fetchSeries } from "../utils/fetchSeries";
 import type {SeriesItem} from "../components/SeriesBlock";
 import SerFull from "../components/SerFull";
@@ -9,7 +9,6 @@ const URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwk_rUljFlmES_9rZ6
 
 const Ser: React.FC = () => {
   const {id} = useParams();
-  const navigate = useNavigate();
   const [error, setError] = React.useState(false);
   const [series, setSeries] = React.useState<SeriesItem[]>([]);
   const [loading, setLoading] = React.useState(true);
@@ -47,12 +46,19 @@ const Ser: React.FC = () => {
   return (
     <div className="ser">
       <div className="container">
-        <SerFull 
-          name={ser.name}
-          image={ser.image}
-          description={ser.description}
-          items={ser.items}
-        />
+        {error ? (
+          <div className="error">
+            <p>Failed to load series data. Please try again later.</p>
+          </div>
+          ) : (
+            <SerFull 
+              name={ser.name}
+              image={ser.image}
+              description={ser.description}
+              items={ser.items}
+            />
+          )
+        }
       </div>
     </div>
   )

@@ -20,11 +20,13 @@ const SerFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) 
       <p className={styles.description}>
         {description}
       </p>
-      <div className={styles.items}>
+      <div className={styles.list}>
         <h2 className={styles.title}>
           Items
         </h2>
-        
+        <div className="list__items">
+          {items}
+        </div>
       </div>
     </div>   
   )
