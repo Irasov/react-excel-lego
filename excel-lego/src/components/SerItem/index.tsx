@@ -29,11 +29,8 @@ const SerItem: React.FC<SerItemType> = ({id, series, name, type, modified, descr
       </div>
       <div className={styles.info}>
         <h3 className={styles.info__title}>
-          {name}.&nbsp; 
+          {name}
         </h3>
-        <p className="info__subtitle">
-          {description}
-        </p>
         <a href="#" className={styles.info__link}>More</a>
       </div>
     </div>

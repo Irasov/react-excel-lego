@@ -1,7 +1,10 @@
 .item {
+  padding: 20px 0;
   display: flex;
-  align-items: center;
-
+  flex-direction: column;
+  row-gap: 10px;
+  border: 1px $fourth-color solid;
+  border-radius: 20px;
 }
 .image {
   max-width: 200px;
@@ -11,8 +14,20 @@
 }
 .info {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
   &__title {
     font-size: 24px;
     color: $fourth-color
+  }
+  &__link {
+    text-decoration: none;
+    color: $third-color;
+    font-size: 26px;
+    transition: color 0.3s ease 0s;
+    &:hover {
+      color: $color-title;
+    }
   }
 }

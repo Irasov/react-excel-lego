@@ -19,3 +19,13 @@
   font-size: 18px;
   align-self: flex-start;
 }
+.list {
+  width: 100%;
+  &__items {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+}

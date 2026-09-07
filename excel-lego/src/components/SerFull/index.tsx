@@ -15,7 +15,7 @@ const SerFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) 
   const URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwk_rUljFlmES_9rZ6LxWQK4Ce2mFrvNtLRxCNXU4jfKyvhQljrCC5ZSCtQe_-mWQBaCC2KJK-8kSE/pub?gid=0&single=true&output=tsv"; 
 
   const [error, setError] = React.useState(false);
-  const [Seritems, setSerItems] = React.useState<SerItemType[]>([]);
+  const [serItems, setSerItems] = React.useState<SerItemType[]>([]);
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -43,7 +43,13 @@ const SerFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) 
     }
   },[]);
 
-  const item = Seritems[0];
+  const indexItems = items.split(',');
+  const mainItems = [];
+  for(let i=0;i < indexItems.length; i+=1) {
+    const index = Number(indexItems[i]);
+    const props = serItems[index];
+    mainItems.push(<SerItem {...props} />);
+  }
 
   return (
     <div className={styles.body}>
@@ -61,7 +67,9 @@ const SerFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) 
           Items
         </h2>
         <div className={styles.list__items}>
-          <SerItem {...item}/>
+        {
+          mainItems
+        }
         </div>
       </div>
     </div>   
