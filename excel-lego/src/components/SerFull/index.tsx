@@ -3,6 +3,7 @@ import styles from "./SerFull.module.scss";
 import {fetchSerItem} from "../../utils/fetchSerItem";
 import type { SerItemType } from "../SerItem";
 import SerItem from "../SerItem";
+import SerItemSkeleton from "../SerItem/SerItemSkeleton";
 
 type SeriaFullProps = {
   name: string;
@@ -45,11 +46,17 @@ const SerFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) 
 
   const indexItems = items.split(',');
   const mainItems = [];
+  const skeletonItems = [];
   for(let i=0;i < indexItems.length; i+=1) {
     const index = Number(indexItems[i]);
     const props = serItems[index];
     mainItems.push(<SerItem {...props} />);
   }
+
+  for(let i=0;i < indexItems.length; i+=1) {
+    skeletonItems.push(<SerItemSkeleton />);
+  }
+
 
   return (
     <div className={styles.body}>
@@ -66,11 +73,15 @@ const SerFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) 
         <h2 className={styles.title}>
           Items
         </h2>
-        <div className={styles.list__items}>
-        {
-          mainItems
-        }
-        </div>
+          {error ? (
+            <div className={styles.error}>
+              <p>Failed to load series data. Please try again later.</p>
+            </div>
+            ) : (
+              <div className={styles.list__items}>
+                {loading ? skeletonItems : mainItems }
+              </div>
+            )}
       </div>
     </div>   
   )

@@ -1,11 +1,6 @@
 import React from "react";
 import styles from "./SerItem.module.scss";
 
-
-type SerItemProps = {
-  id: string;
-}
-
 export interface SerItemType {
   id: string;
   series: string;
