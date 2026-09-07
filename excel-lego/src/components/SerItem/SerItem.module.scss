@@ -1,0 +1,18 @@
+.item {
+  display: flex;
+  align-items: center;
+
+}
+.image {
+  max-width: 200px;
+}
+.img {
+  width: 100%;
+}
+.info {
+  display: flex;
+  &__title {
+    font-size: 24px;
+    color: $fourth-color
+  }
+}
