@@ -50,11 +50,11 @@ const SerFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) 
   for(let i=0;i < indexItems.length; i+=1) {
     const index = Number(indexItems[i]);
     const props = serItems[index];
-    mainItems.push(<SerItem {...props} />);
+    mainItems.push(<SerItem {...props} key={i} />);
   }
 
   for(let i=0;i < indexItems.length; i+=1) {
-    skeletonItems.push(<SerItemSkeleton />);
+    skeletonItems.push(<SerItemSkeleton key={i}/>);
   }
 
 

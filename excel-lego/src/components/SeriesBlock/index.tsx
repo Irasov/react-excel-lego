@@ -64,7 +64,7 @@ const SeriesBlock: React.FC = () => {
   ))
 
   return (
-    <div className="series">
+    <div className="series-block">
       <div className="container">
         <div className={styles.body}>
             <h2 className={styles.title}>
