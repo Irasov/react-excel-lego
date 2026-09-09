@@ -74,7 +74,7 @@ const SerFull: React.FC<SeriaFullProps> = ({ name, image, description, items }) 
           Items
         </h2>
           {error ? (
-            <div className={styles.error}>
+            <div className="error">
               <p>Failed to load series data. Please try again later.</p>
             </div>
             ) : (

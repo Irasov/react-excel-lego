@@ -71,7 +71,7 @@ const SeriesBlock: React.FC = () => {
               Modular Series
             </h2>
             {error ? (
-              <div className={styles.error}>
+              <div className="error">
                 <p>Failed to load series data. Please try again later.</p>
               </div>
               ) : (

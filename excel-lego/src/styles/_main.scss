@@ -35,3 +35,11 @@
 .ser {
     overflow: hidden;
 }
+.error {
+    padding: 20px 0;
+    & p {
+        color:red;
+        font-size: 18px;
+        text-align: center;
+    }
+}
