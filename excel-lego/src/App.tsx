@@ -7,6 +7,7 @@ import Ser from './pages/Ser';
 import Instructions from './pages/Instructions';
 import Media from './pages/Media';
 import Contacts from './pages/Contacts';
+import Item from './pages/Item';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/media' element={<Media />}/>
         <Route path='/contacts' element={<Contacts />}/>
         <Route path='/ser/:id' element={<Ser />}/>
+        <Route path='/item/:id' element={<Item />}/>
         <Route path='*' element={<NotFound />}/>
       </Route>
     </Routes>

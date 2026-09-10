@@ -1,0 +1,32 @@
+.body {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+.image {
+  max-width: 300px;
+  text-align: center;
+}
+.img {
+  width: 100%;
+}
+.title {
+  @include title;
+}
+.description {
+  line-height: 1.5;
+}
+.subtitle {
+  font-size: 20px;
+  align-self: flex-start;
+  color: $fourth-color;
+}
+.spec {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  color: $third-color;
+}

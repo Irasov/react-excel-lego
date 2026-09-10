@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./SerItem.module.scss";
+import { Link } from "react-router-dom";
 
 export interface SerItemType {
   id: string;
@@ -8,15 +9,14 @@ export interface SerItemType {
   type: string;
   modified: string;
   description: string;
-  count: string;
+  сount: string;
   image1:string;
   image2:string;
   image3:string;
   image4:string;
 }
 
-const SerItem: React.FC<SerItemType> = ({id, series, name, type, modified, description, count, image1, image2, image3, image4}) => {
-
+const SerItem: React.FC<SerItemType> = ({id, series, name, type, modified, description, сount, image1, image2, image3, image4}) => {
   return (
     <div className={styles.item}>
       <div className={styles.image}>
@@ -26,7 +26,7 @@ const SerItem: React.FC<SerItemType> = ({id, series, name, type, modified, descr
         <h3 className={styles.info__title}>
           {name}
         </h3>
-        <a href="#" className={styles.info__link}>More</a>
+        <Link to={`/item/${id}`} className={styles.info__link}>More</Link>
       </div>
     </div>
   )
